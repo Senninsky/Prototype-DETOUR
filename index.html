@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detour Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-logo" id="brandLogo"></span>
+      <span class="brand-name">Detour</span>
+      <span class="brand-tag">interactive prototype</span>
+    </div>
+    <div class="legend">
+      <span><i class="lg lg-in"></i>Signals in + "I smoked" reports</span>
+      <span><i class="lg lg-out"></i>Model output → notification or app view</span>
+      <span><i class="lg lg-res"></i>Module published by a researcher</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow orange">User view</p>
+      <h1>What people actually see.</h1>
+      <p class="lede">Pick a person, tweak their signals and watch the Detour model decide <em>whether</em> to step in and <em>how</em>.
+        The model never shows up as a model on the phone: it turns into the right nudge at the right moment.</p>
+    </section>
+
+    <section class="personas" id="personas" aria-label="Choose a person"></section>
+
+    <section class="stage">
+      <div class="col col-inputs" id="inputs"></div>
+
+      <div class="flow flow-in" aria-hidden="true">
+        <span class="flow-label">signals + slips</span>
+        <div class="flow-line"></div>
+      </div>
+
+      <div class="col col-model" id="model"></div>
+
+      <div class="flow flow-out" aria-hidden="true">
+        <span class="flow-label">notification / app view</span>
+        <div class="flow-line"></div>
+      </div>
+
+      <div class="col col-phone">
+        <div class="phone"><div class="screen" id="screen"></div></div>
+        <div class="phone-controls">
+          <button class="chip-btn" data-act="replay"><i data-lucide="rotate-ccw"></i> Replay notification</button>
+          <button class="chip-btn" data-act="home"><i data-lucide="house"></i> Back to phone</button>
+        </div>
+        <p class="phone-hint">Tap the buttons on the notification to try the full flow.</p>
+      </div>
+    </section>
+
+    <section class="researcher" id="researcher"></section>
+  </main>
+
+  <div class="modal-wrap" id="modal" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
